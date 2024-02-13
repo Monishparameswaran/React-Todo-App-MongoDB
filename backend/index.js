@@ -38,7 +38,7 @@ app.post("/updateTodo",async (req,res)=>{
 
 app.use("/todos",async function(req,res){
     const title=req.headers.title
-    const data=await todo.findOne({title: title});
-    res.status(200).json({title: data.title,description: data.desc,completed: data.completed});
+    const data=await todo.find();
+    res.status(200).json({data});
 })
 app.listen(3000);
